@@ -56,7 +56,7 @@ class MaterialController extends Controller {
     }
 
     public function edit($id) {
-        $dados = $regras::find($id);
+        //$dados = $regras::find($id);
     }
 
     public function update(Request $request, $id) {
