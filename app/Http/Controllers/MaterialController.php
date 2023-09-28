@@ -16,14 +16,13 @@ class MaterialController extends Controller {
 
     public function create() {
         return view('material.create');
-        
     }
 
     public function store(Request $request) {
         $regras = [
            'nome' => 'required|max:100|min:10',
            'descricao' => 'required|max:1000|min:20',
-           'foto' => 'required' 
+           'foto' => 'required'
         ];
 
         $msgs = [
