@@ -19,6 +19,7 @@ class CreateAtividadesTable extends Migration
             $table->text('descricao');
             $table->date('data');
             $table->string('foto')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

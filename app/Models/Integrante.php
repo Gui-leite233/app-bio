@@ -10,4 +10,6 @@ class Integrante extends Model
 {
     use HasFactory;
     use softDeletes;
+
+    protected $fillable = ['nome', 'biografia'];
 }
