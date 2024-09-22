@@ -9,5 +9,4 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Integrante extends Model
 {
     use HasFactory;
-    use softDeletes;
 }
