@@ -18,6 +18,7 @@ class CreateMaterialsTable extends Migration
             $table->string('nome');
             $table->text('descricao');
             $table->string('foto')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

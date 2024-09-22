@@ -50,19 +50,47 @@ class MaterialController extends Controller {
         return redirect() ->route('material.index');
     }
 
-    public function show($id) {
-        
-    }
+    public function show($id) { }
 
     public function edit($id) {
-        //$dados = $regras::find($id);
+        $dados = Material::find($id);
+
+        if(!isset($dados)) {return "<h1>ID: $id não encontrado!</h1>";}
+        return view('material.edit', compact('dados'));
     }
 
     public function update(Request $request, $id) {
+        $obj = Material::find($id);
+
+        if(!isset($obj)) { return "<h1>ID: $id não encontrado!</h1>";}
+
+
+        if($request->hasFile('foto')) {
+
+            // Insert no Banco
+            $obj->nome = $request->nome;
+            $obj->descricao = $request->descricao;
+            $obj->save();
+
+            // Upload da Foto
+            $id = $obj->id;
+            $extensao_arq = $request->file('foto')->getClientOriginalExtension();
+            $nome_arq = $id.'_'.time().'.'.$extensao_arq;
+            $request->file('foto')->storeAs("public/$this->path", $nome_arq);
+            $obj->foto = $this->path."/".$nome_arq;
+            $obj->save();
+        }
+
+        return redirect()->route('material.index');
         
     }
 
     public function destroy($id) {
-        
+        $obj = Material::find($id);
+
+        if(!isset($obj)){ return "<h1>ID: $id não encontrado!";}
+
+        $obj->destroy($id);
+        return redirect()->route('material.index');
     }
 }
