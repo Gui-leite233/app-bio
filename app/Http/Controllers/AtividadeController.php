@@ -35,7 +35,7 @@ class AtividadeController extends Controller {
         if($request->hasFile('foto')) {
 
             // Insert no Banco
-            $reg = new Integrante();
+            $reg = new Atividade();
             $reg->nome = $request->nome;
             $reg->descricao = $request->descricao;
             $reg->save();    
