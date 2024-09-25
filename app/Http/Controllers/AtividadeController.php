@@ -64,7 +64,8 @@ class AtividadeController extends Controller {
         return view('atividade.edit', compact('dados'));
     }
 
-    public function update(Request $request, $id) {
+    public function update(Request $request, $id)
+    {
         $obj = Atividade::find($id);
 
         if(!isset($obj)) { return "<h1>ID: $id não encontrado!"; }
@@ -104,7 +105,6 @@ class AtividadeController extends Controller {
 
         return redirect()->route('atividade.index');
     }
-
     public function destroy($id) {
         $obj = Atividade::find($id);
 

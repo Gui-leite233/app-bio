@@ -3,9 +3,8 @@
 @section('titulo') Atividades @endsection
 <!-- Preenche o conteúdo da seção "conteudo" -->
 @section('conteudo')
-
-<form action="{{ route('Atividade.update', $dados->id)}}" method="POST">
-    @csrf
+    <form action="{{ route('atividade.update', $dados->id) }}" method="POST">
+        @csrf
     @method('PUT')
     <div class="row">
         <div class="col" >
