@@ -55,7 +55,9 @@ class AtividadeController extends Controller {
         return redirect()->route('atividade.index');
     }
 
-    public function show($id) {}
+    public function show($id) {
+        
+    }
 
     public function edit($id) {
         $dados = Atividade::find($id);
