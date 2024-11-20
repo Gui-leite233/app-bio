@@ -16,7 +16,8 @@
                     placeholder="Nome"
                     value="{{old('nome')}}"
                 />
-                <label for="nome">Nome</label>
+                
+                <label for="nome">Nom</label>
                 @if($errors->has('nome'))
                     <div class='invalid-feedback'>
                         {{ $errors->first('nome') }}
