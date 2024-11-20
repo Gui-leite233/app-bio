@@ -24,7 +24,7 @@
                         <td d-none d-md-table-cell>{{ $item->id }}</td>
                         <td>{{ $item->nome }}</td>
                         <td class="d-none d-md-table-cell">{{ $item->descricao }}</td>
-                        <td>{{ $item->data }}</td>
+                        
                         <td>
                            
                             <a nohref style="cursor:pointer" onclick="showFotoModal('{{ asset('storage/') }}', '{{ $item->foto }}')">
