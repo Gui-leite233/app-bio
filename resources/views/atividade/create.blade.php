@@ -17,7 +17,7 @@
                     value="{{old('nome')}}"
                 />
                 
-                <label for="nome">Nom</label>
+                <label for="nome">Nome</label>
                 @if($errors->has('nome'))
                     <div class='invalid-feedback'>
                         {{ $errors->first('nome') }}
